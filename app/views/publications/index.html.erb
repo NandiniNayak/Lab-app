@@ -1,0 +1,24 @@
+<% @publications.each do |publication| %>
+  <!-- <div class="publication-section" id="publication"> -->
+    <!-- <div class="publication-grids"> -->
+    <div class="col-md-6 publication-leftgrid">
+    <!-- <div class="publication1"> -->
+      <!-- <div class="left-grid1">
+          <span class="glyphicon glyphicon-glass" aria-hidden="true"></span>
+      </div> -->
+      <div class="left-grid2">
+        <li class="nav-item"><%= link_to publication.name, line_items_path, class: 'nav-link' %></li>
+        <li><strong><%= publication.authors %></strong></li>
+        <li><%= publication.journal %></li>
+        <li><%= publication.price %></li>
+        <% cache ['entry', publication] do %>
+          <div class="entry">
+            <%= button_to 'Add to Cart', line_items_path(publication_id: publication) %>
+          </div>
+        <% end %>
+      </div>
+      </div>
+      </div>
+      <!-- </div> -->
+      <!-- </div> -->
+<% end %>

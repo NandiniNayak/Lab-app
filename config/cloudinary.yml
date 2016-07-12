@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: df69hwp3r
+  api_key: '888333395124775'
+  api_secret: x4Xe_P7hqr9Gk8D32hFRyfJkKPY
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: df69hwp3r
+  api_key: '888333395124775'
+  api_secret: x4Xe_P7hqr9Gk8D32hFRyfJkKPY
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: df69hwp3r
+  api_key: '888333395124775'
+  api_secret: x4Xe_P7hqr9Gk8D32hFRyfJkKPY
+  enhance_image_tag: true
+  static_image_support: false

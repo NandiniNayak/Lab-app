@@ -1,0 +1,23 @@
+<div class="gallery" id="gallery">
+  <div class="container">
+   <h3>LAB VIEW</h3>
+     <div class="gallery-grids">
+      <section>
+       <ul id="da-thumbs" class="da-thumbs">
+            <% @galleries.each do |gallery| %>
+                <% if user_signed_in? %>
+                    <% link_to 'Show', gallery %>
+                    <%= image_tag(gallery.image_url(:thumbnail),:width=>50, :height=>50)%>
+                    <% link_to 'Edit', edit_gallery_path(gallery) %>
+                    <%= link_to 'Destroy', gallery, method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% else %>
+                    <td><%= image_tag(gallery.image_url)%></td>
+                <% end %>
+                </tr>
+          <% end %>
+          <%if user_signed_in? %> <%= link_to 'New Gallery', new_gallery_path %><% end %>
+        </ul>
+      </section>
+    </div>
+  </div>
+</div>

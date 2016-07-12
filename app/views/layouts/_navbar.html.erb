@@ -1,0 +1,20 @@
+<nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+  <div class="container">
+    <a class="navbar-brand" href="/">MOLLOY LAB</a>
+    <ul class="nav navbar-nav pull-md-right">
+      <li class="nav-item"><%= link_to 'Home page', root_path, class: 'nav-link' %></li>
+      <li class="nav-item"><a class="nav-link" href="#">blog</a></li>
+      <li class="nav-item"><a class="nav-link" href="#aboutus">About Us</a></li>
+      <li class="nav-item"><%= link_to 'Contact',contacts_path,class: 'nav-link'%></li>
+      <% if user_signed_in? %>
+          <li class="nav-item"><%= link_to 'Add Publications',new_publication_path, class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to 'Add Pictures',galleries_path, class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
+      <%else%>
+        <li class="nav-item"><%= link_to 'login', new_user_session_path, class: 'nav-link' %></li>
+        <li class="nav-item"><%= link_to 'Publications',publications_path, class: 'nav-link' %></li>
+        <li class="nav-item"><%= link_to 'Gallery',galleries_path,class: 'nav-link'%></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

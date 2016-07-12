@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+<h1>Your Publication Catalog</h1>
+  <% cache ['store', Publication.latest] do %>
+    <% @publications.each do |publication| %>
+      <% cache ['entry', publication] do %>
+        <div class="entry">
+          <%= image_tag(publication.image_url) %>
+          <h3><%= publication.title %></h3>
+          <%= sanitize(publication.description) %>
+          <div class="price_line">
+            <span class="price"><%= number_to_currency(publication.price) %></span>
+            <%= button_to 'Add to Cart', line_items_path(publication_id: publication) %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+<% end %>

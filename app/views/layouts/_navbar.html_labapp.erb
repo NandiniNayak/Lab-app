@@ -1,0 +1,27 @@
+<div class="header navbar-fixed-top" id="home">
+		<div class="header-top">
+			<div class="container">
+			   <div class="logo">
+				  <a>MOLLOY<span>LAB</span></a>
+				</div>
+        <div class="top-menu">
+            <ul>
+            <a href="#home" class="active scroll">home</a>
+            <a href="#aboutus" class="scroll">about us</a></li>
+            <a href="#gallery" class="scroll">gallery</a></li>
+            <a href="#team" class="scroll">team</a>
+            <a href="#blog" class="scroll">blog</a>
+            <a href="#contact" class="scroll">contact</a>
+            <% if user_signed_in? %>
+                <li class="nav-item"><%= link_to 'Add Publications',new_publication_path, class: 'nav-link' %></li>
+                <li class="nav-item"><%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
+            <%else%>
+              <li class="nav-item"><%= link_to 'login', new_user_session_path, class: 'nav-link' %></li>
+              <li class="nav-item"><%= link_to 'Publications',publications_path, class: 'nav-link' %></li>
+            <% end %>
+          </ul>
+        </div>
+			</div>
+			<%= image_tag('karthik.png', class: 'img-responsive',width: '150%')%>
+		</div>
+	</div>
